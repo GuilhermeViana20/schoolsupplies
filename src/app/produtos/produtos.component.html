@@ -1,0 +1,135 @@
+<section class="content-header">Lojas</section>
+
+<section class="content">
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let produto of produtos">
+        
+        <!-- Item -->
+        <div class="card border-dark position-relative" style="min-height: 600px; max-height: 600px">
+
+          <!-- Card -->
+            
+            <!-- Image -->
+            <img style="width: 350px; height: 350px;" [src]="produto.file" alt="..." class="card-img zoom">
+            
+            <!-- Body -->
+            <div class="card-body">
+
+              <div class="row align-items-center mb-3">
+                <div class="col">
+
+                  <!-- Heading -->
+                  <h4 class="card-title mb-0" ngMaxlength="1">
+                    {{produto.name}}
+                  </h4> 
+                  
+                </div>
+                <div class="col-auto">
+                  
+                  <p class="mb-0 text-sm text-muted">
+                    R$ {{produto.price}}
+                  </p>
+
+                </div>
+              </div> <!-- / .row -->
+
+              <!-- Text -->
+              <div class="text-center">
+                  <p class="mb-0 text-sm text-muted">
+                      {{produto.detail}}
+                    </p>
+              </div>
+              
+
+            </div>
+
+
+          <!-- Button -->
+          <div class="text-center">
+            <button class="btn btn-outline-primary" (click)="addProdutosNoCarrinho(produto)" data-toggle="cart" data-action="add">
+              Adicionar ao carrinho
+              <i class="fa fa-plus-square"></i>
+            </button>
+          </div>
+          <br>
+        </div>
+        <br>
+      </div>
+
+    </div> <!-- / .row -->
+  </div> <!-- / .container -->
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- Heading -->
+        <h3 class="mb-5">
+          Seu Carrinho: 
+        </h3>
+
+        <table class="table table-dark table-striped text-center">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Imagem</th>
+                <th>Remover</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let produtos of carrinho">
+              <tr>
+                <td class="align-middle">{{produtos.name}}</td>
+                <td class="align-middle">
+                <img id="icon-action" src="https://img.icons8.com/nolan/30/000000/add.png">
+                2
+                <img id="icon-action" src="https://img.icons8.com/nolan/30/000000/minus.png">
+                </td>
+                <td class="align-middle">
+                  <img id="icone" [src]="produtos.file">
+                </td>
+                <td class="align-middle" (click)="remover()">
+                    <img id="icon-action" src="https://img.icons8.com/nolan/30/000000/full-trash.png">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  
+            <hr class="mt-5 mb-4">
+
+            <div class="row align-items-center">
+              <div class="col">
+                
+                <!-- Link -->
+                  <i class="fa fa-address-card"></i> TOTAL SEM FRETE
+
+              </div>
+              <div class="col-auto">
+                
+                <!-- Total -->
+                <h4 class="mb-0">
+                  $210
+                </h4>
+                
+              </div>
+            </div> <!-- / .row -->
+
+            <hr class="mt-4 mb-5">
+
+        <div class="text-center mb-5 mb-md-0">
+
+          <!-- Button -->
+          <a [routerLink]="['finalizar-venda']" class="btn btn-outline-success">
+            Finalizar a Compra <i class="fa fa-check-square"></i>
+          </a>
+
+        </div>
+      </div>
+    </div> <!-- / .row -->
+  </div> <!-- / .container -->
+</section>
+<mt-footer></mt-footer>

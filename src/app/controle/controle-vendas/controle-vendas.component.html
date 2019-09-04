@@ -1,0 +1,117 @@
+<br>
+<br>
+<br>
+ 
+<div class="container">
+  
+  <mt-paginacao></mt-paginacao>
+
+    <table class="table">
+        <thead class="thead">
+          <tr>
+            <th>
+              <h2>Vendas</h2>
+            </th>
+          </tr>
+        </thead> 
+      </table>
+
+  <table class="table text-center">
+    <thead class="thead-light">
+      <tr>
+        <th><h6>Nome</h6></th>
+        <th><h6>Sobrenome</h6></th>
+        <th><h6>Data</h6></th>
+        <th><h6>Pagamento</h6></th>        
+        <th><h6>Valor</h6></th>
+        <th><h6>Visualizar</h6></th>
+        <th><h6>Remover</h6></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let venda of vendas">
+        <tr>
+          <td>{{venda.firstName}}</td>
+          <td>{{venda.lastName}}</td>
+          <td>{{venda.date}}</td>
+          <td>{{venda.payment}}</td>
+          <td>{{venda.total}}</td>
+          <td><button class="btn btn-outline-success" data-toggle="modal" data-target="#myModal" (click)="onEdit(venda, modalVenda)">Ver</button></td>
+          <td><button class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal" (click)="remover(venda)">Excluir</button></td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+<ng-template #modalVenda>
+
+    <div class="modal-header">
+      <h4 class="modal-title">Visualizar Venda</h4>
+      <button type="button" (click)="fecharModal()" class="close" data-dismiss="modal">&times;</button>
+    </div>
+  
+    <!-- Modal body -->
+    <div class="modal-body">
+      
+      <div class="form-group">
+        <label for="name">Nome</label> 
+        <input [(ngModel)]="venda.firstName" type="text" class="form-control" id="firstName" disabled>
+      </div>
+      <div class="form-group">
+        <label for="category">Sobrenome</label>
+        <input [(ngModel)]="venda.lastName" type="text" class="form-control" id="lastName" disabled>
+      </div>
+      <div class="form-group">
+        <label for="category">Email</label>
+        <input [(ngModel)]="venda.email" type="text" class="form-control" id="email" disabled>
+      </div>
+      <div class="form-group">
+        <label for="category">Endereço</label>
+        <input [(ngModel)]="venda.address" type="text" class="form-control" id="address" disabled>
+      </div>
+      <div class="form-group">
+        <label for="category">CEP</label>
+        <input [(ngModel)]="venda.zip" type="text" class="form-control" id="zip" disabled>
+      </div>
+      <div class="form-group">
+        <label for="name">Data</label> 
+        <input [(ngModel)]="venda.date" type="text" class="form-control" id="date" disabled>
+      </div>
+      <div class="form-group">
+        <label for="category">Pagamento</label>
+        <input [(ngModel)]="venda.payment" type="text" class="form-control" id="payment" disabled>
+      </div>
+      <div class="form-group">
+        <label for="category">Valor</label>
+        <input [(ngModel)]="venda.total" type="text" class="form-control" id="total" disabled>
+      </div>
+  
+    </div>
+  
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-danger" data-dismiss="modal" (click)="fecharModal()">Fechar</button>
+    </div>
+  
+  </ng-template>
+
+<swal 
+#deleteSwal2
+title="Sucesso"
+text="Venda removida com sucesso!"
+type="success"
+(confirm)="listar()">
+</swal>
+
+
+
+  <!-- <div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center" data-toggle="modal" data-target="#myModal2">
+          <p>Você deseja realmente excluir essa loja?</p>
+          <button type="button" class="btn btn-outline-success"> Sim </button>
+          <button type="button" class="btn btn-danger"> Não </button>
+        </div>
+      </div>
+    </div>
+</div> -->

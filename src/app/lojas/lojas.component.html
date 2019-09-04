@@ -1,0 +1,37 @@
+<section class="content-header"></section>
+
+<section class="content">
+
+  <div class="album py-5 bg-light">
+    <section style="width: 85%;margin-left: 7.5%;padding-left: 20px;margin-top: 25px;
+                      margin-bottom: 20px;border-bottom: 2px solid black">
+      <h2>Todas as Lojas</h2>
+
+    </section>
+
+    
+
+      <!-- TODAS AS LOJAS FICAM AQUI -->
+        <div class="container">
+          <div class="row">
+            <div *ngFor="let loja of lojas" class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" [src]="loja.file" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">{{loja.about}}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group" >
+                          <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/loja', loja.id, 'produtos']">Ver Produtos</button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- TODAS AS LOJAS FICAM AQUI -->
+
+  </div>
+</section>
+
+<mt-footer></mt-footer>
