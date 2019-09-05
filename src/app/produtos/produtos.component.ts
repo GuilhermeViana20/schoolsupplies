@@ -58,9 +58,10 @@ export class ProdutosComponent implements OnInit {
   }
 
   Total(){
-    // const total: number = this.produto.price;
-    // return this.Total()
-    // console.log('O total é: ' + total + ' e a quantidade é: ' + this.quantity + ' o valor do total é: ' + this.quantity * total)
+    const total: number = this.produto.price;
+    console.log('O total é: ' + total + ' e a quantidade é: ' + this.quantity + ' o valor do total é: ' + this.quantity * total)
+    return total
+ 
   }
 
 
