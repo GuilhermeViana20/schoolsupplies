@@ -1,10 +1,10 @@
 export class Produtos{
-    id: string
+    id: number
     fk_produtos: string
     name: string
     imagePath: string
     body: string
     detail: string
-    price: string
+    price: number
     quantity: string
 }

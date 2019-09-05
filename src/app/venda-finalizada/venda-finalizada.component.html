@@ -1,21 +1,63 @@
-<!-- <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">Venda Concluída com Sucesso!</h1>
-    <p class="lead font-weight-normal">Agradecemos sua preferência, volte sempre.</p>
-    <a class="btn btn-outline-dark" [routerLink]="['/']">Página Inicial</a>
-  </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-</div> -->
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3">
-<div class="jumbotron text-center">
-  <h1 class="display-3">Venda Finalizada!</h1>
-  <h4>
-    Deseja voltar à tela inicial?
-  </h4>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" [routerLink]="['/']" role="button">Tela Inicial</a>
-  </p>
-</div>
-</div>
+  <div class="jumbotron text-center">
+    <h1 class="display-3">Venda Finalizada!</h1>
+    <h4>
+      Deseja voltar à tela inicial?
+    </h4>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" [routerLink]="['/']" role="button">Tela Inicial</a>
+    </p>
+  </div>
+    <div style="background-color: rgba(112, 128, 144);">
+      <h1 class="text-center" style="background-color: rgb(112, 128, 144); padding: 10px; border-radius: 20px; color: white;">Cupom Fiscal</h1>
+      <br>
+      <h2 class="text-lefth">Dados do Comprador</h2>
+      <table class="table table-light table-striped text-center">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Sobrenome</th>
+              <th>Endereço</th>
+              <th>Valor da Compra</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>Rua J, 16</td>
+              <td>R$ 89.65</td>
+            </tr>
+          </tbody>
+        </table>
+  
+      <h2 class="text-left">Dados da Compra</h2>
+      <table class="table table-light table-striped text-center">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john@example.com</td>
+            </tr>
+            <tr>
+              <td>Mary</td>
+              <td>Moe</td>
+              <td>mary@example.com</td>
+            </tr>
+            <tr>
+              <td>July</td>
+              <td>Dooley</td>
+              <td>july@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>

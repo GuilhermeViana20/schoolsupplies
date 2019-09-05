@@ -11,8 +11,13 @@ export class ProdutosService {
 
   constructor(private http: HttpClient) { }
 
+  items: Produtos[] = []
+
     listaDeProdutos(): Observable<Produtos[]>{
         return this.http.get<Produtos[]>(`http://localhost:3000/produtos`);
     }
 
+    calcularTotal(){
+      
+    }
 }

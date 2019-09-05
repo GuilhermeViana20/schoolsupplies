@@ -15,6 +15,7 @@ export class ProdutosComponent implements OnInit {
   produtos: Produtos[] = [];
   @Input() carrinho: Carrinho[] = [];
   produto: Produtos;
+  quantity = 2;
 
   constructor(
     private data: ProdutosService, 
@@ -39,9 +40,12 @@ export class ProdutosComponent implements OnInit {
   addProdutosNoCarrinho(produto: Produtos){
     this.produto = produto;
     this.carrinho.push(this.produto);
+    this.quantity = this.quantity + 1;
+    const total = this.produto.price;
       console.log(this.produtos)
       console.log(this.produto)
       console.log(this.carrinho);
+      this.Total();
   }
 
   remover(produto: Produtos){
@@ -52,5 +56,14 @@ export class ProdutosComponent implements OnInit {
       console.log(this.carrinho);
 
   }
+
+  Total(){
+    // const total: number = this.produto.price;
+    // return this.Total()
+    // console.log('O total é: ' + total + ' e a quantidade é: ' + this.quantity + ' o valor do total é: ' + this.quantity * total)
+  }
+
+
+
     
 }
