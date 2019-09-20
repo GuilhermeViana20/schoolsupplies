@@ -1,61 +1,69 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import { ROUTES } from './app-routing.module'
+import { routes } from './app-routing.module'
+import { ModalModule } from 'ngx-bootstrap';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { LojasComponent } from './lojas/lojas.component';
+import { LojaComponent } from './lojas/loja/loja.component';
+
+import { LojasService } from './lojas/lojas.service';
+import { LojaDetailComponent } from './loja-detail/loja-detail.component';
+import { ProdutoComponent } from './loja-detail/produto/produto.component';
+import { CarrinhoCompraComponent } from './loja-detail/carrinho-compra/carrinho-compra.component';
+import { ProdutoItemComponent } from './loja-detail/produto-item/produto-item.component';
+import { CarrinhoCompraService } from './loja-detail/carrinho-compra/carrinho-compra.service';
+import { CompraComponent } from './compra/compra.component';
 import { FooterComponent } from './footer/footer.component';
-import { ProdutosComponent } from './produtos/produtos.component';
-import { FinalizarVendaComponent } from './finalizar-venda/finalizar-venda.component';
-import { VendaFinalizadaComponent } from './venda-finalizada/venda-finalizada.component';
-import { ControleComponent } from './controle/controle.component';
-import { PaginacaoComponent } from './controle/paginacao/paginacao.component';
-import { CadastroProdutoComponent } from './controle/cadastro-produto/cadastro-produto.component';
-import { CadastroLojaComponent } from './controle/cadastro-loja/cadastro-loja.component';
-import { NovoProdutoComponent } from './controle/acoes/novo-produto/novo-produto.component';
-import { NovaLojaComponent } from './controle/acoes/nova-loja/nova-loja.component';
-import { ModalModule } from 'ngx-bootstrap';
-import { ControleVendasComponent } from './controle/controle-vendas/controle-vendas.component';
+import { PainelControleComponent } from './painel-controle/painel-controle.component';
+import { GerenciarVendasComponent } from './painel-controle/gerenciar-vendas/gerenciar-vendas.component';
+import { GerenciarEstoqueComponent } from './painel-controle/gerenciar-estoque/gerenciar-estoque.component';
+import { GerenciarLojasComponent } from './painel-controle/gerenciar-lojas/gerenciar-lojas.component';
+import { SidebarComponent } from './painel-controle/sidebar/sidebar.component';
+import { NovoProdutoComponent } from './painel-controle/novo-produto/novo-produto.component';
+import { NovaLojaComponent } from './painel-controle/nova-loja/nova-loja.component'; 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
-    AboutComponent,
+    HeaderComponent,
     LojasComponent,
+    LojaComponent,
+    LojaDetailComponent,
+    ProdutoComponent,
+    CarrinhoCompraComponent,
+    ProdutoItemComponent,
+    CompraComponent,
     FooterComponent,
-    ProdutosComponent,
-    FinalizarVendaComponent,
-    VendaFinalizadaComponent,
-    ControleComponent,
-    PaginacaoComponent,
-    CadastroProdutoComponent,
-    CadastroLojaComponent,
+    PainelControleComponent,
+    GerenciarVendasComponent,
+    GerenciarEstoqueComponent,
+    GerenciarLojasComponent,
+    SidebarComponent,
     NovoProdutoComponent,
-    NovaLojaComponent,
-    ControleVendasComponent
+    NovaLojaComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     ModalModule.forRoot(),
+    AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SweetAlert2Module.forRoot(),
-    RouterModule.forRoot(ROUTES),
-    FormsModule
+    RouterModule.forRoot(routes),
+    FormsModule,
+    SweetAlert2Module.forRoot()
   ],
-  providers: [],
+  providers: [LojasService, CarrinhoCompraService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

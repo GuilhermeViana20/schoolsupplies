@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { Loja } from './loja/loja.model';
 import { LojasService } from './lojas.service';
-import { Loja } from './lojas.model';
 
 @Component({
   selector: 'app-lojas',
   templateUrl: './lojas.component.html',
+  styleUrls: ['./lojas.component.css']
 })
 export class LojasComponent implements OnInit {
 
   lojas: Loja[]
 
-  constructor(private data: LojasService) { }
+  constructor(private lojasService: LojasService) { }
 
   ngOnInit() {
-    this.obterLojas();
+    this.listarLojas();
+  }
+ 
+  listarLojas(){
+    this.lojasService.obterLojas()
+      .subscribe(lojas => this.lojas = lojas)
   }
 
-  obterLojas(){
-      this.data.listaDeLojas().subscribe(res => {
-      this.lojas = res;
-      console.log(this.lojas)
-    })
-  }
 }

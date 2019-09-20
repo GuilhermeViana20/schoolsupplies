@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dimensiva-projeto": {
+    "design-web": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dimensiva-projeto",
+            "outputPath": "dist/design-web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,14 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/popper.js/dist/umd/popper.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -62,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dimensiva-projeto:build"
+            "browserTarget": "design-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dimensiva-projeto:build:production"
+              "browserTarget": "design-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dimensiva-projeto:build"
+            "browserTarget": "design-web:build"
           }
         },
         "test": {
@@ -107,7 +102,7 @@
         }
       }
     },
-    "dimensiva-projeto-e2e": {
+    "design-web-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "dimensiva-projeto:serve"
+            "devServerTarget": "design-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "dimensiva-projeto:serve:production"
+              "devServerTarget": "design-web:serve:production"
             }
           }
         },
@@ -136,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "dimensiva-projeto"
+  "defaultProject": "design-web"
 }

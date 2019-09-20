@@ -1,30 +1,33 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component'
-import { AboutComponent } from './about/about.component'
-import { LojasComponent } from './lojas/lojas.component'
-import { FinalizarVendaComponent } from './finalizar-venda/finalizar-venda.component';
-import { ProdutosComponent } from './produtos/produtos.component';
-import { VendaFinalizadaComponent } from './venda-finalizada/venda-finalizada.component';
-import { ControleComponent } from './controle/controle.component';
-import { CadastroProdutoComponent } from './controle/cadastro-produto/cadastro-produto.component';
-import { CadastroLojaComponent } from './controle/cadastro-loja/cadastro-loja.component';
-import { NovoProdutoComponent } from './controle/acoes/novo-produto/novo-produto.component';
-import { NovaLojaComponent } from './controle/acoes/nova-loja/nova-loja.component';
-import { ControleVendasComponent } from './controle/controle-vendas/controle-vendas.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { LojasComponent } from './lojas/lojas.component';
+import { LojaDetailComponent } from './loja-detail/loja-detail.component';
+import { CompraComponent } from './compra/compra.component'
+import { PainelControleComponent } from './painel-controle/painel-controle.component';
+import { GerenciarVendasComponent } from './painel-controle/gerenciar-vendas/gerenciar-vendas.component';
+import { GerenciarLojasComponent } from './painel-controle/gerenciar-lojas/gerenciar-lojas.component';
+import { GerenciarEstoqueComponent } from './painel-controle/gerenciar-estoque/gerenciar-estoque.component';
+import { NovaLojaComponent } from './painel-controle/nova-loja/nova-loja.component';
+import { NovoProdutoComponent } from './painel-controle/novo-produto/novo-produto.component';
 
-export const ROUTES: Routes = [
+export const routes: Routes = [
   {path: '', component: HomeComponent},
-    {path: 'lojas', component: LojasComponent},
-    {path: 'about', component: AboutComponent},
+  {path: 'lojas', component: LojasComponent},
+  {path: 'lojas/:id', component: LojaDetailComponent},
+  {path: 'compra', component: CompraComponent},
+ 
+  {path: 'painel-controle', component: PainelControleComponent},
+  {path: 'gerenciar-vendas', component: GerenciarVendasComponent},
+  {path: 'gerenciar-lojas', component: GerenciarLojasComponent},
+  {path: 'gerenciar-estoque', component: GerenciarEstoqueComponent},
+  {path: 'nova-loja', component: NovaLojaComponent},
+  {path: 'novo-produto', component: NovoProdutoComponent}
+]; 
 
-    {path: 'loja/:id/produtos', component: ProdutosComponent , pathMatch: 'full'},
-    {path: 'loja/:id/produtos/finalizar-venda', component: FinalizarVendaComponent, pathMatch: 'full'},
-    {path: 'loja/:id/produtos/finalizar-venda/venda-finalizada', component: VendaFinalizadaComponent, pathMatch: 'full'},
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
 
-    {path: 'controle', component: ControleComponent},
-    {path: 'cadastro-produto', component: CadastroProdutoComponent},
-    {path: 'cadastro-loja', component: CadastroLojaComponent},
-    {path: 'controle-vendas', component: ControleVendasComponent},
-    {path: 'novoProduto', component: NovoProdutoComponent},
-    {path: 'novaLoja', component: NovaLojaComponent}
-]
