@@ -14,4 +14,8 @@ export class GerenciarVendasService {
   listaDeVendas(): Observable<GerenciarVendas[]>{
     return this.http.get<GerenciarVendas[]>(`http://localhost:3000/vendas`);
   }
+
+  remover(venda: GerenciarVendas): Observable<GerenciarVendas>{
+    return this.http.delete<GerenciarVendas>(`http://localhost:3000/vendas/${venda.id}`);
+  }
 }

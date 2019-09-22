@@ -51,7 +51,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     GerenciarLojasComponent,
     SidebarComponent,
     NovoProdutoComponent,
-    NovaLojaComponent
+    NovaLojaComponent,
+    CompraComponent
   ],
   imports: [
     BrowserModule,

@@ -48,10 +48,7 @@ export class NovoProdutoComponent implements OnInit {
         [Validators.required, Validators.minLength(3), Validators.maxLength(250)]],
       detail:
       [null, 
-        [Validators.required, Validators.minLength(3), Validators.maxLength(250)]],
-      quantity:
-      [null, 
-        [Validators.required, Validators.minLength(1), Validators.maxLength(250)]]
+        [Validators.required, Validators.minLength(0), Validators.maxLength(250)]],
       });
 
   }
@@ -83,7 +80,7 @@ export class NovoProdutoComponent implements OnInit {
     this.deleteSwal.show();
     this.onCancel();
     this.removeUploadedFile();
-    // this.deleteSwal.show();
+    this.deleteSwal.show();
   }
 
 /*___________________________CARREGAR IMAGEM__________________________*/
