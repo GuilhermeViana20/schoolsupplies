@@ -1,11 +1,11 @@
-<div class="form-group" 
+<div class="form-group"
 
   [class.has-success]="hasSuccess()"
   [class.has-error]="hasError()">
 
   <label for="inputSuccess">{{ label }}*</label>
 
-  <ng-content></ng-content>
+  <ng-content class="mb-3"></ng-content>
 
   <span id="sucesso" class="help-block" *ngIf="hasSuccess()">
     <i class="fa fa-check"></i> Ok</span>
