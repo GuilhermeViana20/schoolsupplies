@@ -30,6 +30,7 @@ import { SidebarComponent } from './painel-controle/sidebar/sidebar.component';
 import { NovoProdutoComponent } from './painel-controle/novo-produto/novo-produto.component';
 import { NovaLojaComponent } from './painel-controle/nova-loja/nova-loja.component'; 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { InputComponent } from './mensagens/input/input.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     SidebarComponent,
     NovoProdutoComponent,
     NovaLojaComponent,
-    CompraComponent
+    CompraComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,

@@ -58,24 +58,10 @@
 
                   <div class="col-md-6 mb-3">
 
-                    <div class="form-group"
-                          [class.has-success]="iptFirstName.valid && (iptFirstName.dirty || iptFirstName.touched)"
-                          [class.has-error]="!iptFirstName.valid && (iptFirstName.dirty || iptFirstName.touched)">
-                    
-                      <label for="inputSuccess">Nome</label>
-                      
-                      <input type="text" class="form-control" name="firstName" minlength="5" #iptFirstName="ngModel" ngModel 
+                    <app-input-container errorMessage=" É obrigatório inserir um nome válido." label="Nome ">
+                      <input type="text" class="form-control" name="firstName" minlength="5" ngModel 
                         placeholder="Dalila" required autocomplete="off">
-                        
-                      <span class="help-block" 
-                              *ngIf="iptFirstName.valid && (iptFirstName.dirty || iptFirstName.touched)">
-                      <i class="fa fa-check"></i> Ok</span>
-
-                      <span class="help-block" 
-                              *ngIf="!iptFirstName.valid && (iptFirstName.dirty || iptFirstName.touched)">
-                      <i class="fa fa-remove"></i> É obrigatório inserir um nome válido.</span>
-                    
-                    </div>
+                    </app-input-container>
 
                   </div>
                   
@@ -83,24 +69,10 @@
 
                   <div class="col-md-6 mb-3">
 
-                    <div class="form-group"
-                          [class.has-success]="iptLastName.valid && (iptLastName.dirty || iptLastName.touched)"
-                          [class.has-error]="!iptLastName.valid && (iptLastName.dirty || iptLastName.touched)">
-
-                        <label for="inputSuccess">Sobrenome</label>
-                        
-                        <input type="text" class="form-control" name="lastName" minlength="1" #iptLastName="ngModel" ngModel 
-                          placeholder="Marques" required autocomplete="off">
-                        
-                        <span class="help-block" 
-                              *ngIf="iptLastName.valid && (iptLastName.dirty || iptLastName.touched)">
-                        <i class="fa fa-check"></i> Ok</span>
-                        
-                        <span class="help-block"
-                              *ngIf="!iptLastName.valid && (iptLastName.dirty || iptLastName.touched)">
-                        <i class="fa fa-remove"></i> É obrigatório inserir um sobrenome válido.</span>    
-
-                    </div>
+                    <app-input-container errorMessage=" É obrigatório inserir um sobrenome válido." label="Sobrenome ">
+                      <input type="text" class="form-control" name="lastName" minlength="1" ngModel 
+                        placeholder="Marques" required autocomplete="off">
+                    </app-input-container>
 
                   </div>
                 
@@ -126,24 +98,10 @@
 
                 <div class="mb-3">
                   
-                  <div class="form-group" 
-                      [class.has-success]="iptAddress.valid && (iptAddress.dirty || iptAddress.touched)"
-                      [class.has-error]="!iptAddress.valid && (iptAddress.dirty || iptAddress.touched)">
-                    
-                    <label for="inputSuccess">Endereço</label>
-                    
-                    <input type="text" class="form-control" name="endereco" minlength="5" #iptAddress="ngModel" ngModel 
-                      placeholder="Rua dos bobos, nº 0" required autocomplete="off">
-
-                    <span class="help-block" 
-                          *ngIf="iptAddress.valid && (iptAddress.dirty || iptAddress.touched)">
-                    <i class="fa fa-check"></i> Ok</span>
-
-                    <span class="help-block" 
-                          *ngIf="!iptAddress.valid && (iptAddress.dirty || iptAddress.touched)">
-                    <i class="fa fa-remove"></i> Por favor, insira seu endereço de entrega.</span>
-  
-                  </div>
+                  <app-input-container errorMessage=" Por favor, insira seu endereço de entrega." label="Endereço ">
+                    <input type="text" class="form-control" name="address" ngModel 
+                        placeholder="Rua dos bobos, nº 0" minlength="5" autocomplete="off" required>
+                  </app-input-container>
 
                 </div>
     
@@ -153,24 +111,10 @@
                   
                   <div class="col-md-3 mb-3">
 
-                    <div class="form-group"
-                        [class.has-success]="iptCEP.valid && (iptCEP.dirty || iptCEP.touched)"
-                        [class.has-error]="!iptCEP.valid && (iptCEP.dirty || iptCEP.touched)">
-
-                        <label for="inputSuccess">CEP</label>
-                  
-                        <input type="text" class="form-control" name="cep" minlength="9" maxlength="9" #iptCEP="ngModel" ngModel
-                          placeholder="60432-243" required autocomplete="off">
-                  
-                        <span class="help-block"
-                              *ngIf="iptCEP.valid && (iptCEP.dirty || iptCEP.touched)">
-                        <i class="fa fa-check"></i> Ok</span>
-                        
-                        <span class="help-block"
-                              *ngIf="!iptCEP.valid && (iptCEP.dirty || iptCEP.touched)">
-                        <i class="fa fa-remove"></i> É obrigatório inserir um CEP.</span>    
-
-                    </div>
+                    <app-input-container errorMessage=" É obrigatório inserir um CEP." label="CEP ">
+                      <input type="text" class="form-control" name="cep" minlength="9" maxlength="9" ngModel
+                        placeholder="60432-243" required autocomplete="off">
+                    </app-input-container>
 
                   </div>
                 </div>
