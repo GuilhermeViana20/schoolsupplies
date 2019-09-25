@@ -6,49 +6,15 @@
 
           <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
-              <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Seu carrinho</span>
-                <span class="badge badge-secondary badge-pill">3</span>
-              </h4>
-              <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="my-0">Nome do produto</h6>
-                    <small class="text-muted">Breve descrição</small>
-                  </div>
-                  <span class="text-muted">R$12</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="my-0">Segundo produto</h6>
-                    <small class="text-muted">Breve descrição</small>
-                  </div>
-                  <span class="text-muted">R$8</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="my-0">Terceiro item</h6>
-                    <small class="text-muted">Breve descrição</small>
-                  </div>
-                  <span class="text-muted">R$5</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between bg-light">
-                  <div class="text-success">
-                    <h6 class="my-0">FRETE</h6>
-                    <small>Adicionados ao valor final</small>
-                  </div>
-                  <span class="text-success">+R$5</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                  <span>Total (BRL)</span>
-                  <strong>R$30</strong>
-                </li>
-              </ul>
+              <app-compra-items></app-compra-items>
             </div> <!-- -->
 
 <div class="col-md-8 order-md-1">
 
           <form #form="ngForm" class="needs-validation" novalidate="">
+
+            {{form.valid}}
+            {{form.value | json}}
 
             <div class="row">
 
@@ -68,15 +34,10 @@
 
             <div class="col-md-6 mb-3">
 
-              <div class="col-md-6 mb-3">
-                <div class="form-group">
-
                   <label for="inputSuccess">Email <span class="text-muted">(Opcional)</span></label>
 
                   <input type="email" class="form-control" name="email" ngModel
                     placeholder="fulano@exemplo.com" autocomplete="off">
-                </div>
-            </div>
 
             </div>
 
@@ -89,7 +50,6 @@
             </div>
 
 
-            <div class="row">
 
               <div class="col-md-6 mb-3">
 
@@ -99,16 +59,19 @@
                 </app-input-container>
 
               </div>
-            </div>
 
             <hr class="mb-4">
 
-            <label class="mb-3" for="pais">Pagamento</label>
-            <select class="custom-select d-block w-10" id="pais" required="">
-              <option value="MON">Dinheiro</option>
-              <option>Cartão de Crédito</option>
-              <option>Cartão de Débito</option>
-            </select>
+            <div class="col-md-6 mb-3">
+
+              <label for="pagamento">Pagamento *</label>
+              <select class="form-control" name="pagamento" ngModel class="custom-select d-block w-10" id="pais" required="">
+                <option value="MON">Dinheiro</option>
+                <option value="CRE">Cartão de Crédito</option>
+                <option value="DEB">Cartão de Débito</option>
+              </select>
+
+            </div>
 
             </div>
 
@@ -120,8 +83,8 @@
       </div>
 <!-- FORMULARIO PARA VENDA -->
 
-              {{form.valid}}
-              {{form.value | json}}
+              <!-- {{form.valid}}
+              {{form.value | json}} -->
 
               <!-- <form #form="ngForm" class="needs-validation" novalidate="">
 

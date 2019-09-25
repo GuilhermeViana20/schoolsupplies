@@ -9,7 +9,7 @@ import { SwalComponent } from '@sweetalert2/ngx-sweetalert2';
   selector: 'app-nova-loja',
   templateUrl: './nova-loja.component.html',
   styleUrls: ['./nova-loja.component.css']
-}) 
+})
 export class NovaLojaComponent implements OnInit {
 
   form: FormGroup;
@@ -17,8 +17,8 @@ export class NovaLojaComponent implements OnInit {
   loja: Loja[] = [];
   @ViewChild('deleteSwal') alert: SwalComponent;
 
-  constructor(private http: HttpClient, 
-    private fb: FormBuilder, 
+  constructor(private http: HttpClient,
+    private fb: FormBuilder,
     private novaLojaService: NovaLojaService,
     private cd: ChangeDetectorRef) { }
 
@@ -32,12 +32,12 @@ export class NovaLojaComponent implements OnInit {
       [null,
         [Validators.required, Validators.minLength(3), Validators.maxLength(250)]],
       category:
-      [null, 
+      [null,
         [Validators.required, Validators.minLength(3), Validators.maxLength(250)]],
       about:
-      [null, 
+      [null,
         [Validators.required, Validators.minLength(3), Validators.maxLength(250)]],
-      file: 
+      file:
       [null,
         [Validators.required, Validators.minLength(3), Validators.maxLength(999)]],
     })
@@ -50,7 +50,7 @@ export class NovaLojaComponent implements OnInit {
     this.removeUploadedFile();
   }
 
-  cadastrar(){ 
+  cadastrar(){
     this.novaLojaService.cadastro(this.form.value).subscribe(res => this.loja.push(res));
     console.log('Loja Cadastrada!')
     this.alert.show();
@@ -64,7 +64,7 @@ export class NovaLojaComponent implements OnInit {
   /*##################### Registration Form #####################*/
   registrationForm = this.fb.group({
     file: [null]
-  })  
+  })
 
   /*########################## File Upload ########################*/
   @ViewChild('fileInput') el: ElementRef;
@@ -88,7 +88,7 @@ export class NovaLojaComponent implements OnInit {
         this.removeUpload = true;
       }
       // ChangeDetectorRef since file is loading outside the zone
-      this.cd.markForCheck();        
+      this.cd.markForCheck();
     }
   }
 
@@ -102,7 +102,7 @@ export class NovaLojaComponent implements OnInit {
       file: [null]
     });
   }
-  
+
   // Submit Registration Form
   onSubmit() {
     this.submitted = true;
