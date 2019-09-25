@@ -32,7 +32,7 @@ import { NovaLojaComponent } from './painel-controle/nova-loja/nova-loja.compone
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { InputComponent } from './mensagens/input/input.component';
 import { CompraItemsComponent } from './compra/compra-items/compra-items.component';
-
+import { CompraService } from './compra/compra.service'
 
 @NgModule({
   declarations: [
@@ -68,7 +68,7 @@ import { CompraItemsComponent } from './compra/compra-items/compra-items.compone
     FormsModule,
     SweetAlert2Module.forRoot()
   ],
-  providers: [LojasService, CarrinhoCompraService],
+  providers: [LojasService, CarrinhoCompraService, CompraService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
