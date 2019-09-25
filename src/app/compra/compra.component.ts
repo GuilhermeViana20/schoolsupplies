@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoItem } from 'src/app/loja-detail/carrinho-compra/carrinho-compra.model'
-import { CarrinhoCompraService } from 'src/app/loja-detail/carrinho-compra/carrinho-compra.service'
+import { CompraService } from './compra.service'
 
 @Component({
   selector: 'app-compra',
@@ -9,7 +9,7 @@ import { CarrinhoCompraService } from 'src/app/loja-detail/carrinho-compra/carri
 })
 export class CompraComponent implements OnInit {
 
-  constructor(private compraService: CarrinhoCompraService) { }
+  constructor(private compraService: CompraService) { }
 
   ngOnInit() {
   }
@@ -27,6 +27,6 @@ export class CompraComponent implements OnInit {
  }
 
  remove(item: CarrinhoItem){
-   this.compraService.removeItem(item)
+   this.compraService.remove(item)
  }
 }
