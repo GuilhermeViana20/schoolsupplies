@@ -32,7 +32,9 @@ import { NovaLojaComponent } from './painel-controle/nova-loja/nova-loja.compone
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { InputComponent } from './mensagens/input/input.component';
 import { CompraItemsComponent } from './compra/compra-items/compra-items.component';
-import { CompraService } from './compra/compra.service'
+import { CompraService } from './compra/compra.service';
+import { CompraFinalizadaComponent } from './compra-finalizada/compra-finalizada.component';
+import { DeliveryCostsComponent } from './compra/compra-items/delivery-costs/delivery-costs.component'
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { CompraService } from './compra/compra.service'
     NovaLojaComponent,
     CompraComponent,
     InputComponent,
-    CompraItemsComponent
+    CompraItemsComponent,
+    CompraFinalizadaComponent,
+    DeliveryCostsComponent
   ],
   imports: [
     BrowserModule,

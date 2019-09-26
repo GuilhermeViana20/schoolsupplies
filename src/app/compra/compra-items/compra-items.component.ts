@@ -11,7 +11,7 @@ export class CompraItemsComponent implements OnInit {
   @Input() items: CarrinhoItem[]
 
   @Output() increaseQty = new EventEmitter<CarrinhoItem>()
-  @Output() decreasyQty = new EventEmitter<CarrinhoItem>()
+  @Output() decreaseQty = new EventEmitter<CarrinhoItem>()
   @Output() remove = new EventEmitter<CarrinhoItem>()
 
   constructor() { }
@@ -19,16 +19,16 @@ export class CompraItemsComponent implements OnInit {
   ngOnInit() {
   }
 
-  emitIncreaseQty(item:CarrinhoItem){
+  emitIncreaseQty(item: CarrinhoItem){
     this.increaseQty.emit(item)
   }
 
  emitDecreaseQty(item: CarrinhoItem){
-   this.decreasyQty.emit(item)
+   this.decreaseQty.emit(item)
  }
 
  emitRemove(item: CarrinhoItem){
    this.remove.emit(item)
  }
- 
+
 }

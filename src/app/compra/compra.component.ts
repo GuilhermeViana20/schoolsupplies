@@ -9,9 +9,15 @@ import { CompraService } from './compra.service'
 })
 export class CompraComponent implements OnInit {
 
+  delivery: number = 8
+
   constructor(private compraService: CompraService) { }
 
   ngOnInit() {
+  }
+
+  itemsValue(): number {
+    return this.compraService.itemsValue()
   }
 
   carrinhoItems(): CarrinhoItem[] {

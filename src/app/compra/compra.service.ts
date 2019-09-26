@@ -9,6 +9,10 @@ export class CompraService {
 
   constructor(private carrinhoService: CarrinhoCompraService) { }
 
+  itemsValue(): number {
+    return this.carrinhoService.total()
+  }
+
   carrinhoItems(): CarrinhoItem[]{
     return this.carrinhoService.items
   }
@@ -25,4 +29,9 @@ export class CompraService {
  remove(item: CarrinhoItem){
    this.carrinhoService.removeItem(item)
  }
+
+ clear(){
+  this.carrinhoService.clear()
+}
+
 }

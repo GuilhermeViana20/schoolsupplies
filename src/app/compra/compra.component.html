@@ -10,6 +10,8 @@
                                 (increaseQty)= "increaseQty($event)"
                                 (decreaseQty)= "decreaseQty($event)"
                                 (remove)= "remove($event)"></app-compra-items>
+                                <app-delivery-costs [delivery]="delivery"
+                                                    [itemsValue]="itemsValue()"></app-delivery-costs>
             </div> <!-- -->
 
 <div class="col-md-8 order-md-1">
@@ -68,7 +70,7 @@
             <div class="col-md-6 mb-3">
 
               <label for="pagamento">Pagamento *</label>
-              <select class="form-control" name="pagamento" ngModel class="custom-select d-block w-10" id="pais" required="">
+              <select class="form-control" name="pagamento" ngModel class="custom-select d-block w-10" id="pais" required>
                 <option value="MON">Dinheiro</option>
                 <option value="CRE">Cartão de Crédito</option>
                 <option value="DEB">Cartão de Débito</option>
@@ -81,6 +83,7 @@
 
           </form>
 
+            <button  [routerLink]="['/compra-finalizada']" class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="!form.valid || carrinhoItems().length === 0">Finalizar Venda</button>
 
         </div>
       </div>
