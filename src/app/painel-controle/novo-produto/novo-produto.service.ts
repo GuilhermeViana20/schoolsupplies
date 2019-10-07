@@ -17,7 +17,7 @@ export class NovoProdutoService {
   }
 
   cadastro(produto: Produtos): Observable<Produtos>{
-    return this.http.post<Produtos>(`${DIMENSIVA_API}rt/produto`, produto)
+    return this.http.post<Produtos>(`${DIMENSIVA_API}/produto`, produto)
   }
 
   obterFkProdutos(): Observable<Loja[]>{

@@ -51,7 +51,8 @@ export class NovaLojaComponent implements OnInit {
   }
 
   cadastrar(){
-    this.novaLojaService.cadastro(this.form.value).subscribe(res => this.loja.push(res));
+    this.novaLojaService.cadastro(this.form.value)
+      .subscribe(res => this.loja.push(res));
     console.log('Loja Cadastrada!')
     this.alert.show();
     this.onCancel();

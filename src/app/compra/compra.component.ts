@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoItem } from 'src/app/loja-detail/carrinho-compra/carrinho-compra.model'
 import { CompraService } from './compra.service'
+import { Compra, CompraItem } from './compra.model';
+import { tap } from 'rxjs/operators'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-compra',
@@ -11,7 +14,9 @@ export class CompraComponent implements OnInit {
 
   delivery: number = 8
 
-  constructor(private compraService: CompraService) { }
+  compraId: object
+
+  constructor(private router: Router, private compraService: CompraService) { }
 
   ngOnInit() {
   }
@@ -35,4 +40,18 @@ export class CompraComponent implements OnInit {
  remove(item: CarrinhoItem){
    this.compraService.remove(item)
  }
+
+ checarCompra(compra: Compra) {
+  compra.compraItems = this.carrinhoItems()
+    .map((item: CarrinhoItem) => new CompraItem(item.quantity, item.produtoItem.id))
+
+  this.compraService.checarCompra(compra)
+    .pipe(tap((compraId: object) => {
+      compraId = compraId
+    }))
+    .subscribe( (compraId: object) => {
+      this.router.navigate(['/compra-finalizada'])
+    this.compraService.clear()
+  })
+}
 }

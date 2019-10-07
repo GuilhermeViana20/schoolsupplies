@@ -58,7 +58,7 @@
 
               <div class="col-md-6 mb-3">
 
-                <app-input-container errorMessage=" É obrigatório inserir um CEP." label="CEP ">
+                <app-input-container errorMessage=" É obrigatório inserir um CEP. Somente números!" label="CEP ">
                   <input type="text" class="form-control" name="cep" minlength="9" maxlength="9" ngModel
                     placeholder="60432-243" required autocomplete="off">
                 </app-input-container>
@@ -83,7 +83,7 @@
 
           </form>
 
-            <button  [routerLink]="['/compra-finalizada']" class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="!form.valid || carrinhoItems().length === 0">Finalizar Venda</button>
+            <button (click)="checarCompra(form.value)" [disabled]="!form.valid || carrinhoItems().length === 0" class="btn btn-primary btn-lg btn-block" type="submit" >Finalizar Venda</button>
 
         </div>
       </div>

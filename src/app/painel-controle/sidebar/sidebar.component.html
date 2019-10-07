@@ -1,4 +1,4 @@
-<div class="sidebar-sticky">
+<!-- <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link active" [routerLink]="['/painel-controle']">
@@ -47,4 +47,14 @@
         </a>
       </li>
     </ul>
+  </div> -->
+
+  <div class="nav-scroller bg-white shadow-sm">
+    <nav class="nav nav-underline">
+      <a class="nav-link active" href="#">Dashboard</a>
+      <a class="nav-link" [routerLink]="['/painel-controle']">
+        Gerenciamentos
+        <span class="badge badge-pill bg-light align-text-bottom">3</span>
+      </a>
+    </nav>
   </div>

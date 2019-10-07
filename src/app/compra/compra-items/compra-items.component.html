@@ -24,20 +24,20 @@
         <tbody>
         <tr *ngFor="let item of items">
           <td class="text-center">
-            <a (click)="emitDecreaseQty(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a>
+            <a (click)="emitDecreaseQty(item)" class="btn btn-sm"><i style="color: DodgerBlue" class="fa fa-minus"></i></a>
             {{item.quantity}}
-            <a (click)="emitIncreaseQty(item)" class="btn btn-sm"><i class="fa fa-plus"></i></a>
+            <a (click)="emitIncreaseQty(item)" class="btn btn-sm"><i style="color: DodgerBlue" class="fa fa-plus"></i></a>
           </td>
           <td>{{item.produtoItem.name}}</td>
 
           <td class="text-right">{{item.value() | currency:'BRL': true }}</td>
           <td class="text-right">
-            <a (click)="emitRemove(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+            <a (click)="emitRemove(item)" class="btn btn-sm danger"><i style="color: red" class="fa fa-remove"></i></a>
           </td>
         </tr>
         </tbody>
       </table>
-      
+
     </div>
     </ul>
 

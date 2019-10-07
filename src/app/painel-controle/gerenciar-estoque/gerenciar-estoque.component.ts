@@ -4,7 +4,11 @@ import { ProdutoItem } from 'src/app/loja-detail/produto-item/produto-item.model
 import { SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 import { Produtos } from '../novo-produto/produto.model';
-import { NovoProdutoService } from '../novo-produto/novo-produto.service';
+import { FormControl } from '@angular/forms';
+import { DIMENSIVA_API } from 'src/app/app.api';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { tap, map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-gerenciar-estoque',
@@ -16,13 +20,15 @@ export class GerenciarEstoqueComponent implements OnInit {
   produtos: ProdutoItem[] = [];
   produto: ProdutoItem;
   bsmodal: BsModalRef;
+  selectedFile: File = null;
+  submitted = false;
   @ViewChild('deleteSwal') alert: SwalComponent;
   @ViewChild('deleteSwal2') alert2: SwalComponent;
 
   constructor(private data: GerenciarEstoqueService,
               private modalService: BsModalService,
               private gerenciarEstoqueService: GerenciarEstoqueService) { }
- 
+
   ngOnInit() {
     this.listar();
   }
@@ -60,4 +66,5 @@ export class GerenciarEstoqueComponent implements OnInit {
     this.bsmodal.hide();
     this.listar();
   }
+
 }

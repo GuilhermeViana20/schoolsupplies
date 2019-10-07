@@ -8,15 +8,16 @@ class Compra {
     public total: number,
     public address: string,
     public payment: string,
-    public id: number,
-    public produtoItems: CompraItem[] = []
+    public id?: number,
+    public compraItems: CompraItem[] = []
   ){}
 }
 
 class CompraItem {
   constructor(
     public quantity: number,
-    public produtoId: string){}
+    public produtoId: string
+    ) {}
 }
 
 export {Compra, CompraItem}
