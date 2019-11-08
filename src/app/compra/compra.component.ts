@@ -41,11 +41,11 @@ export class CompraComponent implements OnInit {
    this.compraService.remove(item)
  }
 
- checarCompra(compra: Compra) {
+ finalizarCompra(compra: Compra) {
   compra.compraItems = this.carrinhoItems()
     .map((item: CarrinhoItem) => new CompraItem(item.quantity, item.produtoItem.id))
 
-  this.compraService.checarCompra(compra)
+  this.compraService.finalizarCompra(compra)
     .pipe(tap((compraId: object) => {
       compraId = compraId
     }))

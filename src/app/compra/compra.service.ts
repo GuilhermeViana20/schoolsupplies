@@ -40,7 +40,7 @@ export class CompraService {
   this.carrinhoService.clear()
   }
 
-  checarCompra(compra: Compra): Observable<Compra>{
+  finalizarCompra(compra: Compra): Observable<Compra>{
     return this.http.post<Compra>(`${DIMENSIVA_API}/compras`, compra)
   }
 }
